@@ -16,7 +16,7 @@ body {
     flex-wrap: wrap;
   } */
  
-  .header {
+  header {
     position: fixed;
     width: 100%;
     height: 56px;
@@ -136,3 +136,131 @@ body {
     padding-bottom: 5px;
 
 } */
+
+
+
+
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+
+
+
+.fab {
+  width: 56px;
+  height: 56px;
+  background: #6b6b6b;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 25px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.fab.active {
+  background: #F44336;
+}
+
+.fab__ripple {
+  position: absolute;
+  left: -17px;
+  bottom: -12px;
+  width: 56px;
+  height: 56px;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  background: #fff;
+  border-radius: 50%;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  transition: -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  transition: transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  transition: transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms, -webkit-transform 0.35s cubic-bezier(0, 0, 0.3, 1) 0ms;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  will-change: transform;
+  z-index: 2;
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.fab:active .fab__ripple {
+  opacity: 0.2;
+  -webkit-transform: scale(1) translate(31%, -22%);
+          transform: scale(1) translate(31%, -22%);
+}
+
+.fab__image {
+  overflow: hidden;
+  z-index: 3;
+}

@@ -1,7 +1,7 @@
 const apiKey = 'ccd8db1c3aef44baa1bc25bbb50da327';
 const main = document.querySelector('main');
 const sourceSelector = document.querySelector('#sourceSelector');
-const defaultSource = 'the-washington-post';
+const defaultSource = 'the-hindu';
 window.addEventListener('load',async e => {
   updateNews();
   await  updateSources();
@@ -32,6 +32,7 @@ async function updateNews(source = defaultSource) {
     const res = await fetch(`https://newsapi.org/v2/top-headlines?sources=${source}&apiKey=${apiKey}`);
     const json = await res.json();
     main.innerHTML = json.articles.map(createArticle).join('\n');
+   
 }
 
 function  createArticle(article) {
