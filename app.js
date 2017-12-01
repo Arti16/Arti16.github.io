@@ -1,11 +1,16 @@
 const apiKey = 'ccd8db1c3aef44baa1bc25bbb50da327';
 const main = document.querySelector('main');
 const sourceSelector = document.querySelector('#sourceSelector');
-const defaultSource = 'the-hindu';
+var defaultSource = '';
 window.addEventListener('load',async e => {
+  var string_url = window.location.href;
+  var url = new URL(string_url);
+  var id = url.searchParams.get("Sid");
+  console.log(id);
+  defaultSource = id;
   updateNews();
   await  updateSources();
-  sourceSelector.value = defaultSource;
+  sourceSelector.value = id;
 
   sourceSelector.addEventListener('change', e => {
      updateNews(e.target.value);

@@ -3,6 +3,7 @@ var cacheName = 'news-cache';
 var filesToCache = [
     './',
     './styles.css',
+    './front.js',
     './app.js',
     './fallback.json',
     './images/fetch-dog.jpg'
